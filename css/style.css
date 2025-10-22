@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300&display=swap');
+
+.dm-sans {
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+*{
+    margin: 0;
+    padding: 0;
+    color: #ccc;
+}
+body{
+    background-color: hsl(250, 68%, 9%);
+    font-family: "DM Sans", sans-serif;
+}
+
+.menu,.titulo,.main{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.menu .logo{
+    padding: 40px 0;
+}
+
+.titulo{
+    text-align: center;
+    color: hsl(0, 0%, 100%);
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+.titulo h1{
+    margin-bottom: 50px;
+}
+.search form input{
+    height: 45px;
+    width: 400px;
+    border: 1px solid #242427;
+    border-radius: 10px;
+    font-size: 18px;
+    padding-left: 45px;
+    background-image: url(../assets/images/icon-search.svg);
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    background-color: #242427;
+    color: #ccc;
+}
+.search input::placeholder{
+    color: #ccc;
+}
+.search form button{
+    height: 45px;
+    width: 120px;
+    border-radius: 10px;
+    font-size: 18px;
+    background-color: hsl(248, 70%, 36%);
+    border: none;
+    color: #ccc;
+    cursor: pointer;
+    margin-left: 15px;
+}
+.search{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.main{
+    display: grid;
+    grid-template-columns: repeat(9,1fr);
+    margin-top: 20px;
+    gap:20px
+}
+.clima-local{
+    grid-column-start: 1;
+    grid-column-end: 7;
+    background-image: url(../assets/images/bg-today-large.svg);
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 15px;
+}
+.local{
+    padding: 20px;
+    font-size: 20px;
+    margin: 70px 0;
+}
+.graus{
+    padding: 20px;
+    line-height: 10px;
+    display: flex;
+    align-items: center;
+}
+.graus img{
+    height: 120px;
+}
+.graus p{
+    font-size: 90px;
+}
+.clima-hora{
+    grid-column-start: 7;
+    grid-column-end: 10;
+    background-color: #242427;
+    grid-row-start: 1;
+    grid-row-end: 4;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 15px;
+    gap: 15px;
+    max-height: 592px;
+    overflow-y: scroll;
+    
+}
+.clima-hora::-webkit-scrollbar {
+  width: 8px; 
+}
+.clima-hora::-webkit-scrollbar-thumb {
+  background-color: #585b63;    
+  border-radius: 10px;      
+  border: 2px solid #202225;  
+}
+.clima-hora::-webkit-scrollbar-thumb:hover {
+  background-color: #7a7d85;
+}
+.titulo-hora{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.titulo-hora span{
+    background-color: #3c3c41;
+    padding: 10px;
+    border-radius: 10px;
+}
+.hora{
+    display: flex;
+    background-color: #3c3c41;
+    border-radius: 15px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    padding-right: 20px;
+    font-size: 20px;
+}
+.hora div{
+    display: flex;
+    align-items: center;
+}
+.hora div img{
+    height: 50px;
+}
+.clima-infos{
+    grid-column-start: 1;
+    grid-column-end: 7;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+}
+.infos{
+    background-color: #242427;
+    border-radius: 10px;
+    padding: 15px;
+}
+.infos h4{
+    font-weight: normal;
+    padding-bottom: 10px ;
+    font-size: 20px;
+}
+.infos p{
+    font-size: 40px;
+}
+.clima-sete-dias{
+    grid-column-start: 1;
+    grid-column-end: 7;
+    height: 300px;
+}
+.clima-sete-dias h2{
+    font-size: 17px;
+    padding: 20px 0;
+}
+.dias{
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    gap: 10px;
+    font-size: 15px;
+    text-align: center;
+}
+.dia{
+    background-color: #242427;
+    padding: 15px;
+    border-radius: 15px;
+    height: 120px;
+}
+.dia img{
+    height: 60px;
+    padding: 10px 0;
+}
+.grau-dia{
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width:1000px){
+    .clima-hora{
+        grid-column-start: 2;
+        grid-column-end: 9;
+        grid-row-start: 3;
+    }
+    .clima-local,.clima-sete-dias,.clima-infos{
+        grid-column-start: 2;
+        grid-column-end: 9;
+    }
+    
+}
+
+@media (max-width:790px){
+    .clima-hora{
+        grid-column-start: 1;
+        grid-column-end: 8;
+        grid-row-start: 3;
+    }
+    .clima-local,.clima-sete-dias,.clima-infos{
+        grid-column-start: 1;
+        grid-column-end: 8;
+    }
+    .dias{
+        grid-template-columns: repeat(5,1fr);
+
+    }
+    .main{
+        grid-template-columns: 0;
+    }
+
+}
+@media (max-width:570px){
+    .dias{
+        grid-template-columns: repeat(3,1fr);
+
+    }
+    .clima-infos{
+        grid-template-columns: repeat(2,1fr);
+
+    }
+    .clima-local{
+        flex-wrap: wrap;
+        
+    }
+    .local{
+        margin: 0;
+    }
+    .clima-hora{
+        grid-column-start: 1;
+        grid-column-end: 8;
+        grid-row-start: 7;
+        margin-top: 250px;
+    }
+    .search form input,.search form button{
+        width: 100%;
+        margin: 0;
+    }
+}
+@media (max-width:400px){
+    .dias{
+        grid-template-columns: repeat(2,1fr);
+
+    }
+    .clima-hora{
+        margin-top: 400px;
+    }
+}
